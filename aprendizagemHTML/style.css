@@ -1,0 +1,30 @@
+
+body {
+    background-color: rgba(0, 0, 0, 0.685);
+    color: aliceblue;
+    margin: 50px;
+}
+.main{
+    display: flex;
+    padding: 10;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100000px;
+}
+strong{
+    color: aqua;
+}
+
+.links {
+    display: flex;
+    padding-right: 5%;
+    justify-content: space-evenly;
+}
+.rede{
+    background-color: aquamarine;
+    border: solid 20px;
+    border-color: aquamarine;
+    border-radius: 10px;
+}
