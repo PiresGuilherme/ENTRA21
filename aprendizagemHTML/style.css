@@ -11,7 +11,7 @@ body {
 .header{
     display: flex;
     flex-direction: column;
-    padding-bottom: 100000px;
+    margin-bottom: 15px;
 }
 strong{
     color: aqua;
