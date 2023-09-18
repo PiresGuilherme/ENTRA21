@@ -1,19 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: rgba(0, 0, 0, 0.685);
     color: aliceblue;
-    margin: 50px;
+    /* height: 100vh; */
+    box-sizing: border-box;
 }
-.main{
-    display: flex;
+
+.main {
     padding: 10;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin: 10% 15%;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
-strong{
+
+.text {
+    font-size: 20px;
+}
+strong {
     color: aqua;
 }
 
@@ -22,9 +37,15 @@ strong{
     padding-right: 5%;
     justify-content: space-evenly;
 }
-.rede{
+
+.rede {
     background-color: aquamarine;
     border: solid 20px;
     border-color: aquamarine;
     border-radius: 10px;
+}
+
+.test {
+    display: flex;
+
 }
