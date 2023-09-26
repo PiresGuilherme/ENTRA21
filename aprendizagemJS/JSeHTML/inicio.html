@@ -11,7 +11,7 @@
     <script>
         // window.alert('Você chegou!');
         // window.confirm('Confirmar?');
-        var n1 = Number.parseInt(prompt('Digite um numero:'));
+        // var n1 = Number.parseInt(prompt('Digite um numero:'));
         // var n2 = Number(prompt('Digite outro numero:'));
         // document.write(n1 + n2);
 
@@ -27,8 +27,57 @@
         // document.write(nome.replace('res', ''));
 
 
-        document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+        // document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // exercicio  1 
+            // var nome = prompt('digite seu nome');
+            // document.write(`<p>${nome}</p>`);
+            // document.write(`<p>${nome.length}</p>`);
+            // document.write(`<p>${nome.toLocaleLowerCase()}</p>`);
+            // document.write(`<p> ${nome.toLocaleUpperCase()}</p>`)
+
+            // var n1 = Number(prompt('digite um numero'));
+            // var n2 = Number(prompt('segundo numero'));
+            // document.write(`<h1>${(n1+n2).toFixed(2)}</h1>`)
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        // document.getElementsByTagName('p')[1];
     </script>
+    <!-- <h1 >Olá</h1>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aspernatur voluptates vel, ipsum inventore labore illum odit autem repellat saepe. Quidem nostrum amet labore ipsum doloremque nulla adipisci reiciendis ratione.</p>
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eum ipsa error fugiat ea vero quibusdam culpa unde, iste placeat officia reprehenderit et, nulla enim, accusamus architecto sunt praesentium quasi?</p>
+    <div style="background-color:aqua;width: 100px; height: 100px;"></div>
+    <input type="text">
+    <input type="number">
+    -->
+    <script>
+        // var letra = document.getElementsByTagName('p')[1];
+        // letra.style.color = 'red';
+
+        // document.write(`O conteudo do paragráfo é ${letra.innerHTML}`)
+        // document.getElementById('parag')
+        // document.getElementsByClassName('titulo').style.color = red;
+
+        // document.querySelector('h1');
+        // document.querySelector('.text');
+        // document.querySelector('#p2');
+        // document.querySelector('input[type=number]');
+        // </script>
+
+        <!-- //////////////////////////////////////////////////////// -->
+        <div id="area" onclick="clicar()">
+            clique!
+        </div>
+        
+        <script>
+            function clicar(){
+                var teste = document.querySelector('#area');
+                teste.innerHTML = 'clicou!';
+            }
+        </script>
 </body>
 
 </html>
