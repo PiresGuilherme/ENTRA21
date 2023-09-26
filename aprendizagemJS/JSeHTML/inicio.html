@@ -11,16 +11,23 @@
     <script>
         // window.alert('Você chegou!');
         // window.confirm('Confirmar?');
-        // var n1 = Number.parseInt(prompt('Digite um numero:'));
+        var n1 = Number.parseInt(prompt('Digite um numero:'));
         // var n2 = Number(prompt('Digite outro numero:'));
         // document.write(n1 + n2);
 
-        // var number = 5;
+        // var soma = n1+n2;
         // number.toString()
 
-        var nome = prompt('nome?')
-        document.write(`<h2>Olá <strong>${nome}<strong> </h2>`)
+        // var nome = prompt('nome?');
+        // document.write(`<h2>Olá <strong>${nome}<strong> </h2>`);
+        // document.write(`<p>Seu nome tem ${nome.length} letras</p>`);
+        // document.write(`<p>${nome.toLocaleUpperCase()}</p>`);
+        // document.write(`<p>${nome.toLocaleLowerCase()}</p>`);
+        // document.write(soma.toFixed(3));
+        // document.write(nome.replace('res', ''));
 
+
+        document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
     </script>
 </body>
 
