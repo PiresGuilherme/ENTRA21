@@ -30,7 +30,7 @@
         // document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // exercicio  1 
+            // exercicio  1
             // var nome = prompt('digite seu nome');
             // document.write(`<p>${nome}</p>`);
             // document.write(`<p>${nome.length}</p>`);
@@ -67,17 +67,27 @@
         // document.querySelector('input[type=number]');
         // </script>
 
-        <!-- //////////////////////////////////////////////////////// -->
-        <div id="area" onclick="clicar()">
-            clique!
-        </div>
-        
-        <script>
-            function clicar(){
-                var teste = document.querySelector('#area');
-                teste.innerHTML = 'clicou!';
-            }
-        </script>
+    <!-- //////////////////////////////////////////////////////// -->
+    <div id="area" class="divas" onmouseenter="entrar()" onmouseout="sair()">
+        clique!
+    </div>
+
+    <script>
+        var teste = document.querySelector('#area');
+        teste.addEventListener('click', clicar)
+        function entrar() {
+            teste.innerHTML = 'entrou!';
+        }
+        function clicar() {
+            teste.style.color = 'red';
+        }
+        function sair() {
+            teste.innerHTML = 'saiu!'
+            teste.style.color = 'black'
+        }
+
+
+    </script>
 </body>
 
 </html>
