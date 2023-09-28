@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            
+        </style>
+</head>
+
+<body class="bg">
+    <h1 class="d-flex justify-content-center">ACERVO CANETA AZUL</h1>
+    <div class="videos my-3 d-flex flex-column align-items-center justify-content-center">
+        <div class="card bg-primary" style="width: 18rem;">
+            <iframe class="video visually-hidden vId1" width="400" height="300"
+                src="https://www.youtube.com/embed/2P_esm8cNgU" title="Manoel Gomes - Caneta Azul [Vídeo Oficial]"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <div class="card-body">
+              <h5 class="card-title">Caneta azul</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button class="btn btn-info" onclick="playVideo('vId1')">play</button>
+              <button class="btn btn-info" onclick="pararVideo('vId1')">Parar</button>
+            </div>
+          </div>
+
+
+        <div class="canetaAzul my-3 d-flex flex-column align-items-center justify-content-center">
+            <div>
+                <button class="btn btn-info" onclick="playVideo('vId1')">Caneta azul</button>
+                <button class="btn btn-info" onclick="pararVideo('vId1')">Parar</button>
+            </div>
+            <iframe class="video visually-hidden vId1" width="400" height="300"
+                src="https://www.youtube.com/embed/2P_esm8cNgU" title="Manoel Gomes - Caneta Azul [Vídeo Oficial]"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="vouDeixar my-3 d-flex flex-column align-items-center justify-content-center">
+            <div>
+                <button class="btn btn-info" onclick="playVideo('vId2')">Vou Deixar de ser besta</button>
+                <button class="btn btn-info" onclick="pararVideo('vId2')">Parar</button>
+            </div>
+            <iframe class="video visually-hidden vId2" width="400" height="300"
+                src="https://www.youtube.com/embed/oxxJRZIZthg?list=RDEMO-GlPSat6qT1zUaNeAgybQ?autoplay=1"
+                title="Manoel Gomes - Eu vou deixar de ser besta (Clip Oficial)" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="Maura d-flex flex-column align-items-center justify-content-center">
+            <div>
+                <button class="btn btn-info" onclick="playVideo('vId3')">Maura</button>
+                <button class="btn btn-info" onclick="pararVideo('vId3')">Parar</button>
+            </div>
+            <iframe class="video visually-hidden vId3" width="400" height="300"
+                src="https://www.youtube.com/embed/xE5TaJJAyU0?list=RDEMO-GlPSat6qT1zUaNeAgybQ"
+                title="Manoel Gomes - Maura" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+        </div>
+
+        <div class="seVoce my-3 d-flex flex-column align-items-center justify-content-center">
+            <div>
+                <button class="btn btn-info" onclick="playVideo('vId4')">Olha, Se você não me ama</button>
+                <button class="btn btn-info" onclick="pararVideo('vId4')">Parar</button>
+            </div>
+            <iframe class="video visually-hidden vId4" width="400" height="300"
+                src="https://www.youtube.com/embed/FbDplUUW8SQ?list=RDEMO-GlPSat6qT1zUaNeAgybQ"
+                title="Olha, Se você não me ama (Manoel Gomes e Tierry" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+    <script>
+
+        function playVideo(vId) {
+            var teste = document.querySelector('.' + vId);
+            var src = teste.src;
+            console.log(teste);
+            teste.src = src + '?autoplay=1';
+            console.log(teste.className);
+            teste.className = 'video ' + vId;
+            console.log(teste.className);
+        }
+        function pararVideo(vId) {
+            var teste = document.querySelector('.' + vId);
+            var src = teste.src;
+            // console.log(teste.src);
+            teste.src = src;
+            teste.className = teste.className + ' visually-hidden';
+        }
+    </script>
+</body>
+
+</html>
