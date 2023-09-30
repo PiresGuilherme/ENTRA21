@@ -56,7 +56,34 @@
     // const saudacao = nomes.forEach(n => console.log(`prazer ${n}, tudo bem ? `));
 
 
-    //4
+    // 4
     // const substantivos = ['maca', 'banana', 'pessego' , 'saude', 'uva', 'mamao']
-    // const m = substantivos.map(n => n).filter(t => t.charAt(0)==='m');
+    // const m = substantivos.filter(t => t.charAt(0)==='m').map((n) => n.toLocaleUpperCase());
     // console.log(m);
+
+
+    //5
+    // const notasAlunos = [
+    //     {nome: 'Pedro', notas: [8,9]},
+    //     {nome: 'Pires', notas: [9, 10]},
+    //     {nome: 'Pedro', notas: [2, 4]}
+    // ];
+    
+    // const media = notasAlunos.map((nota) => { 
+    //     const medias = nota.notas.reduce((i,a) => i + a, 0) /3;
+
+    //     return {...nota,medias}
+    // });
+    const notasAlunos = [
+        {nome: 'Pedro', notas: [8,9]},
+        {nome: 'Pires', notas: [9, 10]},
+        {nome: 'Pedro', notas: [2, 4]}
+    ];
+    
+    const media = notasAlunos.map((nota) => { 
+        const medias = nota.notas.reduce((i,a) => i + a, 0) /3;
+
+        return {...nota,medias}
+    });
+    
+    console.log(media);
