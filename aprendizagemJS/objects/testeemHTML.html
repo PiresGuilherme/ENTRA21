@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 1 -->
+    <!-- <form>
+        <label for="p">Primeiro nome</label>
+        <input type="text" id="p" alt="digite seu primeiro nome">
+        <label for="s">Segundo nome</label>
+        <input type="text" id="s" alt="digite seu sobrenome">
+        <input type="button" value="enviar" onclick="juntar()">
+    </form> -->
+    <!-- <script>
+        // function juntar(){
+        //     var completo = document.getElementById('p').value + " " + document.getElementById('s').value;
+        //     document.write (completo);
+        // }
+        // const pf = {
+        //     nome:null,
+        //     idade:null,
+        //     endereco:null,
+        //     estadoCivil:null,
+        // };
+        // pf.nome = prompt('digite seu nome: ');
+        // pf.idade = prompt('digite sua idade: ');
+        // pf.endereco = prompt('digite seu endereco: ');
+        // pf.estadoCivil = prompt('digite seu estado civil: ');
+
+        // alert(`Seu nome é ${pf.nome}, sua idade é ${pf.idade}, seu endereco é ${pf.endereco}, e seu estado civil é ${pf.estadoCivil}`);
+
+
+    </script> -->
+
+
+
+    <!-- 2 -->
+
+    <!-- <form>
+        <label for="p">quantidade de pessoas</label>
+        <input type="number" id="qnt" alt="quantidade de pessoas"><br>
+        <label for="p">quilos</label>
+        <input type="number" id="kg" alt="quantidade de carne por pessoas"><br>
+        <label for="s">tipo de carne</label>
+        <input type="text" id="type" alt="tipo de carne"><br>
+        <input type="button" value="enviar" id="enviar">
+    </form> -->
+    <!-- <script>
+        // let mercado = [
+        //     { nome: 'figado', preco: 17 },
+        //     { nome: 'file', preco: 14.00 },
+        //     { nome: 'coxa', preco: 9.00 },
+        //     { nome: 'sobrecoxa', preco: 12.00 },
+        //     { nome: 'costela', preco: 12.00 },
+        // ]
+        // enviar.onclick = () => { churrasco() };
+        // function churrasco() {
+        //     var qnt = parseFloat(document.getElementById('qnt').value);
+        //     var peso = parseFloat(document.getElementById('kg').value);
+        //     var tipo = mercado.filter(nome => {
+        //         return nome.nome == document.getElementById('type').value;
+        //     });
+        //     console.log(tipo);
+        //     var preco = mercado.filter(valor => {
+        //         return (valor.preco === tipo[0].preco && valor.nome === tipo[0].nome);           
+        //     }).map(teste => teste.preco);
+        //     console.log(preco);
+        //     var carne = tipo.map(nome => nome.nome);
+        //     calcular(peso, preco, qnt);
+        // }
+        // function calcular(peso, preco, qnt) {
+        //     var totalValor = peso * preco;
+        //     var qntPorPessoa = peso / qnt;
+        //     console.log(`o preço total que será pago para comprar a carne para ${qnt} pessoas é ${totalValor}`);
+        //     console.log(`cada pessoa poderá comer ${qntPorPessoa}kg`);
+        // }
+    </script> -->
+
+
+    <!-- 3 -->
+    <!-- <form id="FormId">
+        <label for="name">Nome</label>
+        <input type="text" id="name"><br>
+        <label for="age">Idade</label>
+        <input type="number" id="age"><br>
+        <div>
+            <input name="gender" type="radio" value="solteiro"> Solteiro
+            <input name="gender" type="radio" value="casado"> Casado
+            <input name="gender" type="radio" value="viúvo"> Viúvo
+            <input name="gender" type="radio" value="divorciado"> Divorciado
+        </div>
+        <input type="button" value="enviar" id="enviar">
+        <input type="button" value="buscar" id="buscar">
+
+    </form>
+    <script>
+        // var pessoas = []
+        // enviar.onclick = () => { trabalhar2(), limpar(); };
+        // buscar.onclick = () => { listar() };
+        // function trabalhar() {
+        //     var nome = document.getElementById('name').value;
+        //     var age = document.getElementById('age').value;
+        //     let gender = document.querySelector('input[name="gender"]:checked').value;
+        //     console.log(`Seu nome é ${nome}, tem ${age} anos e seu estado civil atual é ${gender}`);
+        // };
+        // function limpar() {
+        //     document.getElementById('FormId').reset();
+        // }
+
+        //  // 4
+        // function trabalhar2() {
+        //     {
+        //         var name = document.getElementById('name').value;
+        //         var age = document.getElementById('age').value;
+        //         let gender = document.querySelector('input[name="gender"]:checked').value;
+        //         cadastrar(name, age, gender);
+        //     }
+        // };
+
+       
+        // function cadastrar(name, age, gender) {
+        //     var usuario = {
+        //         name: name,
+        //         age: age,
+        //         gender: gender,
+        //     }
+        //     pessoas.push(usuario);
+        // }
+        // function listar() {
+        //     pessoas.forEach(pessoa => console.log(pessoa));
+        // }
+    </script> -->
+    <h1>cadastre</h1>
+    <form id="cadastro">
+        <label for="nomeLivro">Nome do Livro</label>
+        <input type="text" id="nomeLivro"><br>
+        <label for="autor">Autor</label>
+        <input type="text" id="autor"><br>
+        <label for="data">Data de Lançamento</label>
+        <input type="datetime" id="data"><br>
+        <input type="button" id="send" value="send">
+        <input type="button" value="listar" id="list">
+    </form>
+    <div>
+
+    </div>
+    <h2>Busca</h2>
+    <form>
+        <label for="busca">Digite o nome do livro favorito</label>
+        <input type="text" id="favorito">
+        <input type="button" value="buscar" id="busca">
+    </form>
+    <script>
+        var livros = []
+        send.onclick = () => { extrair(), limpar() };
+        function limpar() {
+            document.getElementById('cadastro').reset();
+        }
+        function extrair() {
+            var nome = document.getElementById('nomeLivro').value;
+            var autor = document.getElementById('autor').value;
+            var data = document.getElementById('data').value;
+            cadastrar(nome, autor, data);
+        }
+        function cadastrar(nome, autor, data) {
+            let livro = {
+                nome: nome,
+                autor: autor,
+                data: data,
+            }
+            livros.push(livro);
+        }
+        list.onclick = () => { listar(); }
+        function listar() {
+            livros.forEach(livro => console.log(livro));
+        }
+
+
+        busca.onclick= () => {buscar()};
+        function buscar() {
+            let favorito = document.getElementById('favorito').value;
+            let resultados = livros.find(livro => livro.nome === favorito
+        );
+        if(resultados) {
+                console.log(`o seu livro preferido é ${resultados.nome}`);
+            } else {
+                console.log('livro não foi encontrado, por favor verifique.');
+            }        
+        }
+    </script>
+</body>
+
+</html>
