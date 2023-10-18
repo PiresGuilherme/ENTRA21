@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="cadastro">
+        <ul id="list">
+            <p id="error"></p>
+        </ul>
+        <input type="text" id="texto" placeholder="teste2">
+        <input type="button" id="enviar" value="botão">
+    </form>
+    <div id="listagem">
+    </div>
+
+    <script>
+        var grid = {
+            descricao: null,
+            concluida: null
+        };
+        var listaDeTarefas = [];
+        var checked = [];
+        enviar.onclick = () => { tarefas() }
+
+        function tarefas() {
+            var tarefa = document.getElementById('texto').value;
+            var status = {
+                descricao: tarefa,
+                concluida: 'pendente'
+            };
+            listaDeTarefas.push(status);
+
+            // console.log(listaDeTarefas);
+            exibir();
+        }
+
+        function exibir() {
+            document.querySelector('#listagem');
+            var elementosTarefas = listaDeTarefas.map(function (tarefa, i) {
+                if (checked) {
+                    return `
+                <li>${tarefa.descricao} (${tarefa.concluida}) 
+                    <input name="tarefas" type="checkbox" checked onClick='checar(${i})' value="${i}">
+                    <button id='remov${i}' onClick='excluir(${i})'>remover</button> 
+                    <button id='edit${i}' onClick='edit(${i})'>editar</button> 
+                    </li> <br>
+                `;
+                }
+                else {
+                    return `
+                <li>${tarefa.descricao} (${tarefa.concluida}) 
+                    <input name="tarefas" type="checkbox" onClick='checar(${i})' value="${i}">
+                    <button id='remov${i}' onClick='excluir(${i})'>remover</button> 
+                    <button id='edit${i}' onClick='edit(${i})'>editar</button> 
+                    </li> <br>
+                `;
+                }
+
+            });
+            document.getElementById('listagem').innerHTML = elementosTarefas + "";
+            clear();
+        }
+
+        function clear() {
+            document.getElementById('cadastro').reset()
+        }
+
+        function excluir(remover) {
+            listaDeTarefas.splice(remover, 1)
+            exibir();
+        }
+
+        function checar(i) {
+
+            if (listaDeTarefas[i].concluida === 'pendente') {
+                listaDeTarefas[i].concluida = 'concluida';
+                
+            } else {
+                listaDeTarefas[i].concluida = 'pendente';
+                checked.splice(checked.indexOf(i), 1);
+            }
+            exibir();
+        }
+
+        function edit(i) {
+            var novaDescricao = prompt('Digite a nova descrição');
+            console.log(novaDescricao);
+            if (novaDescricao !== '') {
+                listaDeTarefas[i].descricao = novaDescricao;
+                exibir();
+            } else {
+                alert('É necessário escrever uma descrição')
+            }
+        }
+    </script>
+</body>
+
+</html>

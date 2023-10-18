@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
     <!-- 1 -->
     <!-- <form>
         <label for="p">Primeiro nome</label>
@@ -50,36 +49,43 @@
         <label for="s">tipo de carne</label>
         <input type="text" id="type" alt="tipo de carne"><br>
         <input type="button" value="enviar" id="enviar">
-    </form> -->
-    <!-- <script>
-        // let mercado = [
-        //     { nome: 'figado', preco: 17 },
-        //     { nome: 'file', preco: 14.00 },
-        //     { nome: 'coxa', preco: 9.00 },
-        //     { nome: 'sobrecoxa', preco: 12.00 },
-        //     { nome: 'costela', preco: 12.00 },
-        // ]
-        // enviar.onclick = () => { churrasco() };
-        // function churrasco() {
-        //     var qnt = parseFloat(document.getElementById('qnt').value);
-        //     var peso = parseFloat(document.getElementById('kg').value);
-        //     var tipo = mercado.filter(nome => {
-        //         return nome.nome == document.getElementById('type').value;
-        //     });
-        //     console.log(tipo);
-        //     var preco = mercado.filter(valor => {
-        //         return (valor.preco === tipo[0].preco && valor.nome === tipo[0].nome);           
-        //     }).map(teste => teste.preco);
-        //     console.log(preco);
-        //     var carne = tipo.map(nome => nome.nome);
-        //     calcular(peso, preco, qnt);
-        // }
-        // function calcular(peso, preco, qnt) {
-        //     var totalValor = peso * preco;
-        //     var qntPorPessoa = peso / qnt;
-        //     console.log(`o preço total que será pago para comprar a carne para ${qnt} pessoas é ${totalValor}`);
-        //     console.log(`cada pessoa poderá comer ${qntPorPessoa}kg`);
-        // }
+    </form>
+    <script>
+    //     let mercado = [
+    //         { nome: 'figado', preco: 17 },
+    //         { nome: 'file', preco: 14.00 },
+    //         { nome: 'coxa', preco: 9.00 },
+    //         { nome: 'sobrecoxa', preco: 12.00 },
+    //         { nome: 'costela', preco: 12.00 },
+    //     ]
+    //     enviar.onclick = () => { churrasco() };
+    //     function churrasco() {
+    //         var qnt = parseFloat(document.getElementById('qnt').value);
+    //         var peso = parseFloat(document.getElementById('kg').value);
+    //         var tipo = mercado.filter(nome => {
+    //             return nome.nome == document.getElementById('type').value;
+    //         });
+    //         console.log(tipo);
+    //         var preco = mercado.filter(valor => {
+    //             return (valor.preco === tipo[0].preco && valor.nome === tipo[0].nome);           
+    //         }).map(teste => teste.preco);
+    //         console.log(preco);
+    //         var carne = tipo.map(nome => nome.nome);
+    //         calcular(peso, preco, qnt);
+    //     }
+    //     function calcular(peso, preco, qnt) {
+    //     if(qnt >10){
+    //              var totalValor = peso * (preco * 1.10);
+    //         var qntPorPessoa = peso / qnt;
+    //         console.log(`o preço total que será pago para comprar a carne para ${qnt} pessoas é ${totalValor}`);
+    //         console.log(`cada pessoa poderá comer ${qntPorPessoa}kg`);
+    //     } else {
+    //         var totalValor = peso * preco;
+    //         var qntPorPessoa = peso / qnt;
+    //         console.log(`o preço total que será pago para comprar a carne para ${qnt} pessoas é ${totalValor}`);
+    //         console.log(`cada pessoa poderá comer ${qntPorPessoa}kg`);
+    //     }
+    // }
     </script> -->
 
 
@@ -103,12 +109,12 @@
         // var pessoas = []
         // enviar.onclick = () => { trabalhar2(), limpar(); };
         // buscar.onclick = () => { listar() };
-        // function trabalhar() {
-        //     var nome = document.getElementById('name').value;
-        //     var age = document.getElementById('age').value;
-        //     let gender = document.querySelector('input[name="gender"]:checked').value;
-        //     console.log(`Seu nome é ${nome}, tem ${age} anos e seu estado civil atual é ${gender}`);
-        // };
+        // // function trabalhar() {
+        // //     var nome = document.getElementById('name').value;
+        // //     var age = document.getElementById('age').value;
+        // //     let gender = document.querySelector('input[name="gender"]:checked').value;
+        // //     console.log(`Seu nome é ${nome}, tem ${age} anos e seu estado civil atual é ${gender}`);
+        // // };
         // function limpar() {
         //     document.getElementById('FormId').reset();
         // }
@@ -136,13 +142,18 @@
         //     pessoas.forEach(pessoa => console.log(pessoa));
         // }
     </script> -->
-    <h1>cadastre</h1>
+
+
+
+
+    <!-- 5 -->
+    <!-- <h1>cadastre</h1>
     <form id="cadastro">
-        <label for="nomeLivro">Nome do Livro</label>
+        <label for="nomeLivro">Titulo</label>
         <input type="text" id="nomeLivro"><br>
         <label for="autor">Autor</label>
         <input type="text" id="autor"><br>
-        <label for="data">Data de Lançamento</label>
+        <label for="data">Ano de Lançamento</label>
         <input type="datetime" id="data"><br>
         <input type="button" id="send" value="send">
         <input type="button" value="listar" id="list">
@@ -157,43 +168,44 @@
         <input type="button" value="buscar" id="busca">
     </form>
     <script>
-        var livros = []
-        send.onclick = () => { extrair(), limpar() };
-        function limpar() {
-            document.getElementById('cadastro').reset();
-        }
-        function extrair() {
-            var nome = document.getElementById('nomeLivro').value;
-            var autor = document.getElementById('autor').value;
-            var data = document.getElementById('data').value;
-            cadastrar(nome, autor, data);
-        }
-        function cadastrar(nome, autor, data) {
-            let livro = {
-                nome: nome,
-                autor: autor,
-                data: data,
-            }
-            livros.push(livro);
-        }
-        list.onclick = () => { listar(); }
-        function listar() {
-            livros.forEach(livro => console.log(livro));
-        }
+        // var livros = []
+        // send.onclick = () => { extrair(), limpar() };
+        // function limpar() {
+        //     document.getElementById('cadastro').reset();
+        // }
+        // function extrair() {
+        //     var nome = document.getElementById('nomeLivro').value;
+        //     var autor = document.getElementById('autor').value;
+        //     var data = document.getElementById('data').value;
+        //     cadastrar(nome, autor, data);
+        // }
+        // function cadastrar(nome, autor, data) {
+        //     let livro = {
+        //         nome: nome,
+        //         autor: autor,
+        //         data: data,
+        //     }
+        //     livros.push(livro);
+        // }
+
+        // list.onclick = () => { listar(); }
+        // function listar() {
+        //     livros.forEach(livro => console.log(livro));
+        // }
 
 
-        busca.onclick= () => {buscar()};
-        function buscar() {
-            let favorito = document.getElementById('favorito').value;
-            let resultados = livros.find(livro => livro.nome === favorito
-        );
-        if(resultados) {
-                console.log(`o seu livro preferido é ${resultados.nome}`);
-            } else {
-                console.log('livro não foi encontrado, por favor verifique.');
-            }        
-        }
-    </script>
+        // busca.onclick = () => { buscar() };
+        // function buscar() {
+        //     let favorito = document.getElementById('favorito').value;
+        //     let resultados = livros.filter(livro => livro.nome === favorito
+        //     );
+        //     if (resultados) {
+        //         resultados.forEach( resultado => console.log(`o seu livro preferido é ${resultados.nome}`));
+        //     } else {
+        //         console.log('livro não foi encontrado, por favor verifique.');
+        //     }
+        // }
+    </script> -->
 </body>
 
 </html>
