@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .background {
+            background-image: url(relogio.avif);
+            width: 10px;
+            height: 10px;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            position: relative;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .time-display {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .tamanho{
+            font-size: 7vh;
+        }
+    </style>
+</head>
+
+<body class="">
+    <!-- <div id="mensagem"></div>
+    <script>
+        // function exibirMensagem() {
+        //     let m = document.querySelector('#mensagem');
+        //     m.innerHTML = 'A mensagem após 3 segundos';
+        // }
+
+        // setTimeout(exibirMensagem, 3000)
+    </script> -->
+
+    <!-- <div id="contador"></div>
+
+    <script>
+        // var contador = 0;
+
+        // function atualizaContador() {
+        //     var conta = document.getElementById('contador');
+        //     conta.innerHTML = 'Contagem ' + contador;
+        //     contador++
+        // }
+        // var intervalo = setInterval(atualizaContador, 1000);
+
+        // setTimeout(function () {
+        //     clearInterval(intervalo);
+        //     document.getElementById('contador').innerHTML = 'Contagem finalizada';
+        // }, 5000)
+
+    </script> -->
+
+    <!-- 1 -->
+    <!-- <div id='exibir'></div>
+
+    <script>
+        // function trocar() {
+        //     var troca = document.getElementById('exibir');
+        //     troca.innerHTML = 'uma mensagem para o usuário';
+        // }
+        // setTimeout(trocar, 5000)
+    </script> -->
+
+
+    <!-- 2 -->
+     <!-- <div id="2"></div>
+
+    <script>
+        // var a = Number(prompt('digite um número'))
+        // // function acres() {
+        // //     var div = document.getElementById('2');
+        // //     div.innerHTML= a;
+        // //     a+=100;
+        // // }
+        
+        // var intervalo = setInterval(() =>{
+        //     let div = document.getElementById('2');
+        //     div.innerHTML= a;
+        //     a+=100;
+        // }, 1000);
+
+        // setTimeout( function() {
+        //     clearInterval(intervalo);
+        //     document.getElementById('2').innerHTML = 'Contagem finalizada ' + a ;
+        // }, 4000)
+    </script>  -->
+
+
+
+    <!-- 3 -->
+
+    <!-- <div class="clock">
+        <img src="relogio.avif" alt="Relógio">
+        <div class="time-display">
+            <div id="relogio" class="row align-items-center tamanho"></div>
+        </div>
+    </div> -->
+    <script>
+        // var relogio = document.getElementById('relogio')
+        // function contador() {
+        //     // if (s < 60) {
+        //     //     s++;
+        //     //     exibe(h, m, s);
+        //     // } else if (m < 60) {
+        //     //     s = 0;
+        //     //     m++;
+        //     //     exibe(h, m, s);
+        //     // } else if (h < 24) {
+        //     //     s = 0;
+        //     //     m = 0;
+        //     //     h++;
+        //     //     exibe(h, m, s);
+        //     // } else {
+        //     //     h = 0;
+        //     //     m = 0;
+        //     //     s = 0;
+        //     //     exibe(h, m, s);
+        //     // }
+        //     // exibe(h, m, s);
+            // var horario = new Date();    
+            // var h = horario.getHours()
+            // var m = horario.getMinutes();
+            // var s = horario.getSeconds();
+            // exibe(h, m, s);
+        // }
+        // function exibe(h, m, s) {
+        //     relogio.innerHTML = `${h} :  ${m} : ${s}`
+
+        // }
+        // setInterval(contador, 1000);
+    </script>
+</body>
+
+</html>

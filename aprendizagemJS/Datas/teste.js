@@ -48,33 +48,33 @@
 // console.log(dateFormatada);
 
 
-function exibir(date) {
-    return (`${date.getUTCDate()} / ${date.getUTCMonth() + 1} / ${date.getUTCFullYear()} `)
-}
+// function exibir(date) {
+//     return (`${date.getUTCDate()} / ${date.getUTCMonth() + 1} / ${date.getUTCFullYear()} `)
+// }
 //1 
-var data = new Date();
+// var data = new Date();
 // console.log(exibir(data));
 
 //2
-let nasc = new Date('2003-04-02');
+// let nasc = new Date('2003-04-02');
 // console.log(exibir(nasc));
 
 //3
-var atual = new Date();
-var dias = 10
-atual.setDate(atual.getDate() + dias);
+// var atual = new Date();
+// var dias = 10
+// atual.setDate(atual.getDate() + dias);
 // console.log(exibir(atual));
-var outra = new Date ('2005-02-16')
+// var outra = new Date ('2005-02-16')
 
-//4
-function diferenca(data, outra) {
-    var resultado = (data - outra);
-    let paragraph = document.createElement('p');
-    paragraph.textContent = (`diferenca em dias ${Math.floor(resultado / (1000*60*60*24))}`);
-    document.body.appendChild(paragraph)
-    return(`diferenca em dias ${Math.floor(resultado / (1000*60*60*24))}`);
-} 
-console.log(diferenca(atual, nasc));
+// //4
+// function diferenca(data, outra) {
+//     var resultado = (data - outra);
+    // let paragraph = document.createElement('p');
+    // paragraph.textContent = (`diferenca em dias ${Math.floor(resultado / (1000*60*60*24))}`);
+    // document.body.appendChild(paragraph)
+//     return(`diferenca em dias ${Math.floor(resultado / (1000*60*60*24))}`);
+// } 
+// console.log(diferenca(atual, nasc));
 
 //5
 // var day = prompt('digite o dia');
@@ -85,12 +85,14 @@ console.log(diferenca(atual, nasc));
 
 
 //6
-function recente(data1,data2) {
-    if(data1 >data2){
-        console.log(data1);
-    } else{
-        console.log(data2);
-    }
-}
+// function recente(data1,data2) {
+//     if(data1 >data2){
+//         console.log(data1);
+//     } else{
+//         console.log(data2);
+//     }
+// }
 
 // recente(outra,nasc)
+
+
