@@ -1,6 +1,6 @@
 // var array = [10, 9, 8, 7];
 // function funcaoPrincipal(array, media) {
- 
+
 //     console.log(media(array));
 // }
 
@@ -27,32 +27,34 @@
 //3
 function obterUsuario(callback) {
     return setTimeout(() => {
-        return callback( {
-            id:1,
-            nome: 'Aladim' ,           
+        return callback({
+            id: 1,
+            nome: 'Aladim',
             dataNascimento: new Date()
         })
     }, 1000);
 };
+
 function obterTelefone(idUsuario, callback) {
     if (idUsuario) {
         setTimeout(() => {
-            callback( {
+            callback({
                 telefone: '470028922',
                 ddd: 11
             })
         }
-    
-    , 2000)}
+            , 2000)
+    }
 };
+
 obterUsuario(
-    (usuario, err)=>{
+    (usuario, err) => {
         if (err) {
             console.log(err);
         } else {
             console.log(usuario.nome);
             obterTelefone(usuario.id, (telefone, err) => {
-                if(err){
+                if (err) {
                     console.log(err);
                 } else {
                     console.log(`(${telefone.ddd}) ${telefone.telefone}`);
@@ -60,7 +62,4 @@ obterUsuario(
             })
         }
     }
-    // (usuario) => {
-    //     console.log(usuario.nome)
-    // }
 )

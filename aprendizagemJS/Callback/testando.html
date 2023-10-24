@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="nome">
+        <input type="number" id="telefone">
+        <input type="date" id="data">
+        <input type="button" id="cadastrar" value="botao">
+    </form>
+    <script>
+        var array = [];
+        function obterUsuario(callback) {
+            return setTimeout((array) => {
+                return callback({
+                    id: callback.id,
+                    nome: document.getElementById('nome').value,
+                    dataNascimento: document.getElementById('data').value
+                })
+            }, 1000);
+        };
+        function obterTelefone(idUsuario, callback) {
+            if (idUsuario) {
+                setTimeout(() => {
+                    callback({
+                        id : idUsuario,
+                        telefone: document.getElementById('telefone'),
+                    })
+                }
+                    , 2000)
+            }
+        };
+
+        cadastrar.onclick =() => obterUsuario(
+    (usuario, err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(usuario.nome);
+            console.log(usuario.id);
+            obterTelefone(usuario.id, (telefone, err) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log(`(${telefone.ddd}) ${telefone.telefone}`);
+                }
+            })
+        }
+    }
+)
+    </script>
+</body>
+
+
+</html>
