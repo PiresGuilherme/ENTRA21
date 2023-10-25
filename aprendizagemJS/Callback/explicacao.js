@@ -62,3 +62,108 @@
 // const callbackson = (number) => console.log(number);
 
 // funcaoPrincipal(callbackson);
+
+
+
+
+
+//PROMISES
+
+// const minhaPromise = new Promise((resolve,reject) => {
+//     setTimeout(() => {
+//         resolve('operação bem sucedida');
+//     }, 1000);
+// });
+
+// // tentando imrpimir antes que a promise seja resolvida, retornará Promise{<pending>}
+// console.log(minhaPromise);
+
+// minhaPromise.then((resultado) => {
+//     // isso será impresso depois que a promise for resolvida
+//     console.log(resultado);
+// })
+
+
+
+// function sumNumbers(sucesso, erro) {
+//     let result = 1 + 1;
+//     if (result === 2) {
+//         sucesso();
+//     } else {
+//         erro();
+//     };
+// };
+
+// function sucessoa() {
+//     console.log('2');
+// };
+
+// function erroa() {
+//     console.log('erro');
+// };
+
+// sumNumbers(() => {
+//     console.log('2')
+// }, () => {
+//     console.log('erro');
+// });
+
+
+// let promise = new Promise((resolve, reject) => {
+//     let soma = 1 + 1;
+//     if (soma === 2) {
+//         resolve('s, 2');
+//     } else {
+//         reject('errou')
+//     }
+// })
+
+// promise.then((result) => {
+//     console.log(result);
+// }).catch((errado) => {
+//     console.log(errado);
+// })
+
+
+
+
+// const melhorDev = 'joão';
+// function quemEMelhor(callback, erro) {
+//     if (melhorDev != 'Pires' && melhorDev != 'fernanda') {
+//         erro({
+//             nome: 'está errado',
+//             message: melhorDev + '? É sério?'
+//         });
+//     } else {
+//         callback({
+//             nome: melhorDev,
+//             message: 'Somos os melhores'
+//         });
+//     }
+// }
+
+// quemEMelhor((result) => {
+//     console.log(result.nome + '? uhhu ' + result.message);
+// }, (erro) => {
+//     console.log(erro.nome + ' ' + erro.message);
+// });
+
+
+// let melhor = new Promise((resolve, err) => {
+//     if (melhorDev != 'Pires' && melhorDev != 'fernanda') {
+//         err({
+//             nome: 'está errado',
+//             message: melhorDev + '? É sério?'
+//         })
+//     } else {
+//         resolve({
+//             nome: melhorDev,
+//             message: 'Somos os melhores'
+//         })
+//     }
+// })
+// melhor.then((result) => {
+//     console.log(result.nome + '? uhhu ' + result.message);
+// }).catch((erro) => {
+//     console.log(erro.nome + ' ' + erro.message);
+// });
