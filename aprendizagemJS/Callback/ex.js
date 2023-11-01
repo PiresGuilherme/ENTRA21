@@ -140,6 +140,7 @@
 
 
 ///ASYNC/AWAIT
+//1
 // var notas = [10, 9, 8, 7];
 // function media(array) {
 //     return new Promise((resolve, reject) => {
@@ -157,16 +158,15 @@
 //     } catch (error) {
 //         console.log(error);
 //     }
-
 // }
 // exec(notas);
 
-
+//2
 // var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // function pares(numeros) {
 //     return new Promise((resolve, reject) => {
-//         if (numeros.filter((n) => n % 2 == 0)) {
 //             let par = numeros.filter((n) => n % 2 == 0)
+//         if (par.length >0) {
 //             resolve(par)
 //         } else {
 //             reject('Não há numeros pares');
@@ -184,7 +184,7 @@
 // calcular(nums);
 
 
-
+//3
 // var user = {
 //     id: 1,
 //     nome: 'Pires',
@@ -202,7 +202,7 @@
 //     })
 // }
 // function telefone(id) {
-    // return new Promise((resolve, reject) => {
+//     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
 //             if (typeof id === 'number') {
 //                 var telefone = {
@@ -230,6 +230,8 @@
 // }
 // exibir(user);
 
+
+// 4
 // function buscarDados() {
 //     return new Promise((resolve, reject) => {
 //         setTimeout(()=>{
@@ -250,7 +252,10 @@
 //         var dado = await buscarDados();
 //         console.log(dado);
 //     } catch(erro) {
-//         console.log(erro);
+//         console.error(erro);
 //     }
 // }
 // processarDados();
+
+
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="import" href="Explicacao.js">
+</head>
+
+<body>
+    <label for="id">id</label>
+    <input type="number" id="id">
+    <label for="nome">nome</label>
+    <input type="text" id="nome">
+    <label for="email">email</label>
+    <input type="email" id="email">
+    <label for="telefone">telefone</label>
+    <input type="text" id="telefone">
+    <button id="buscar" onclick="cadastrar()">cadastrar</button>
+    <table id="tabela">
+        <thead>
+            <th id="id">ID</th>
+            <th id="nome">Nome</th>
+            <th id="email">Email</th>
+            <th id="fone">Fone</th>
+        </thead>
+    </table>
+    <button id="buscar" onclick="buscando()">buscar</button>
+
+    <br><br><br><br><br>
+    <label for="id">id</label>
+    <input type="number" id="idalterar">
+    <label for="nome">nome</label>
+    <input type="text" id="nomealterar">
+    <label for="email">email</label>
+    <input type="email" id="emailalterar">
+    <label for="telefone">telefone</label>
+    <input type="text" id="telefonealterar">
+    <button id="buscar" onclick="alterar()">alterar</button>
+    <br><br><br><br><br>
+
+    <label for="id">id</label>
+    <input type="number" id="idexcluir">
+    <button id="buscar" onclick="excluir()">excluir</button>
+
+    <script>
+        function encontrar(idDigitado) {
+            return fetch(`http://localhost:3000/usuario/${idDigitado}`)
+                .then(response => { return response.json() })
+                .then(data => { return data })
+                .catch(erro => reject())
+        }
+        // async function encontrar(idDigitado) {
+        //     try {
+        //         const response = await fetch(`http://localhost:3000/usuario/${idDigitado}`);
+        //         const data = await response.json();
+        //         console.log(data);
+        //         return data; // Retorna os dados encontrados
+        //     } catch (erro) {
+        //         throw new Error('Erro ao buscar no banco de dados.'); 
+        //     }
+        // }
+        function buscando() {
+            fetch('http://localhost:3000/usuario')
+                .then(response => response.json())
+                .then(dado => {
+                    dado.forEach(pessoa => {
+                        console.log(pessoa);
+                        const tabela = document.querySelector('#tabela')
+                        const corpo = document.createElement('tr')
+                        const idcolumn = document.createElement('td')
+                        idcolumn.innerHTML = pessoa.id;
+
+                        const ncolumn = document.createElement('td')
+                        ncolumn.innerHTML = pessoa.nome;
+
+                        const emailcolumn = document.createElement('td')
+                        emailcolumn.innerHTML = pessoa.email;
+
+                        const telcolumn = document.createElement('td')
+                        telcolumn.innerHTML = pessoa.fone;
+
+
+                        tabela.appendChild(corpo);
+                        corpo.appendChild(idcolumn);
+                        corpo.appendChild(ncolumn);
+                        corpo.appendChild(emailcolumn);
+                        corpo.appendChild(telcolumn);
+
+                    });
+                })
+                .catch(err => console.error(err))
+        }
+        function cadastrar() {
+            var cid = document.querySelector('#id').value;
+            var cnome = document.querySelector('#nome').value;
+            var cemail = document.querySelector('#email').value;
+            var ctel = document.querySelector('#telefone').value;
+            var objeto = {
+                id: cid,
+                nome: cnome,
+                email: cemail,
+                fone: ctel
+            }
+
+            fetch('http://localhost:3000/usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(objeto)
+            })
+                .then(response => response.json())
+                .then(data => alert('dado inserido'))
+                .catch(err => alert(err))
+        }
+
+        async function alterar() {
+            let idDigitado = document.querySelector('#idalterar').value;
+            try {
+                if (idDigitado != '') {
+                    var banco = await encontrar(idDigitado);
+                }
+                console.log(banco);
+                if (banco.id != '') {
+                    console.log('OI');
+                    const updateTask = {
+                        id: idDigitado,
+                        nome: document.querySelector('#nomealterar').value,
+                        email: document.querySelector('#emailalterar').value,
+                        fone: document.querySelector('#telefonealterar').value
+                    };
+                    console.log(updateTask);
+                    fetch(`http://localhost:3000/usuario/${idDigitado}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': "application/json"
+                        },
+                        body: JSON.stringify(updateTask)
+                    })
+                        .then(response => response.json())
+                        .then(data => console.log(data))
+                        .catch((err) => console.log('deu erro aqui'))
+                }
+            } catch (err) { console.log(err) }
+        }
+
+        async function excluir() {
+            let idDigitado = document.querySelector('#idexcluir').value;
+            try {
+                let resultado = await encontrar(idDigitado);
+                if (resultado != null) {
+                    fetch(`http://localhost:3000/usuario/${idDigitado}`,
+                        {
+                            method: 'DELETE',
+                        })
+                } else {
+
+                }
+            } catch { (err) => { console.log(err) } }
+        }
+    </script>
+</body>
+
+</html>
