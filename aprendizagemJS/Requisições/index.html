@@ -5,11 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="import" href="Explicacao.js">
 </head>
 
 <body>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="http://127.0.0.1:5500/aprendizagemJS/Requisi%C3%A7%C3%B5es/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <h2>Cadastrar</h2>
+                <input type="number" id="id">
+                <label for="nome">nome</label>
+                <input type="text" id="nome">
+                <label for="email">email</label>
+                <input type="email" id="email">
+                <label for="telefone">telefone</label>
+                <input type="text" id="telefone">
+                <button id="buscar" onclick="cadastrar()">cadastrar</button>
+                <table id="tabela">
+                    <thead>
+                        <th id="id">ID</th>
+                        <th id="nome">Nome</th>
+                        <th id="email">Email</th>
+                        <th id="fone">Fone</th>
+                    </thead>
+                </table>
+                <button id="buscar" onclick="buscando()">buscar</button>
+            </div>
+            <div class="col">
+                <h2>Alterar</h2>
+                <label for="id">id</label>
+                <input type="number" id="idalterar">
+                <label for="nome">nome</label>
+                <input type="text" id="nomealterar">
+                <label for="email">email</label>
+                <input type="email" id="emailalterar">
+                <label for="telefone">telefone</label>
+                <input type="text" id="telefonealterar">
+                <button id="buscar" onclick="alterar()">alterar</button>
+            </div>
+            <div class="col">
+                <h2>Cadastrar</h2>
+                <label for="id">id</label>
+                <input type="number" id="idexcluir">
+                <button id="buscar" onclick="excluir()">excluir</button>
+            </div>
+        </div>
+    </div> -->
     <label for="id">id</label>
     <input type="number" id="id">
     <label for="nome">nome</label>
@@ -82,12 +168,19 @@
                         const telcolumn = document.createElement('td')
                         telcolumn.innerHTML = pessoa.fone;
 
+                        const btn = document.createElement('button');
+                        btn.innerText = 'alterar';
+                        btn.addEventListener('click', function () {
+                            alterar(pessoa.id);
+                        });
+
 
                         tabela.appendChild(corpo);
                         corpo.appendChild(idcolumn);
                         corpo.appendChild(ncolumn);
                         corpo.appendChild(emailcolumn);
                         corpo.appendChild(telcolumn);
+                        corpo.appendChild(btn)
 
                     });
                 })
@@ -118,33 +211,34 @@
         }
 
         async function alterar() {
-            let idDigitado = document.querySelector('#idalterar').value;
+            // let idDigitado = document.querySelector('#idalterar').value;
             try {
-                if (idDigitado != '') {
-                    var banco = await encontrar(idDigitado);
-                }
-                console.log(banco);
-                if (banco.id != '') {
-                    console.log('OI');
-                    const updateTask = {
-                        id: idDigitado,
-                        nome: document.querySelector('#nomealterar').value,
-                        email: document.querySelector('#emailalterar').value,
-                        fone: document.querySelector('#telefonealterar').value
-                    };
-                    console.log(updateTask);
-                    fetch(`http://localhost:3000/usuario/${idDigitado}`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': "application/json"
-                        },
-                        body: JSON.stringify(updateTask)
-                    })
-                        .then(response => response.json())
-                        .then(data => console.log(data))
-                        .catch((err) => console.log('deu erro aqui'))
-                }
+                // if (idDigitado != '') {
+                //     var banco = await encontrar(idDigitado);
+                // }
+                console.log(id);
+            //     if (banco.id != '') {
+            //         const updateTask = {
+            //             id: idDigitado,
+            //             nome: document.querySelector('#nomealterar').value,
+            //             email: document.querySelector('#emailalterar').value,
+            //             fone: document.querySelector('#telefonealterar').value
+            //         };
+            //         console.log(updateTask);
+            //         fetch(`http://localhost:3000/usuario/${idDigitado}`, {
+            //             method: 'PUT',
+            //             headers: {
+            //                 'Content-Type': "application/json"
+            //             },
+            //             body: JSON.stringify(updateTask)
+            //         })
+            //             .then(response => response.json())
+            //             .then(data => console.log(data))
+            //             .catch((err) => console.log('deu erro aqui'))
+            //     }
             } catch (err) { console.log(err) }
+
+            
         }
 
         async function excluir() {
