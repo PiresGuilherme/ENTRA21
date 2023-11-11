@@ -7,7 +7,6 @@ class Livro {
         this._titulo = titulo;
         this._autor = autor;
         this._numDePag = numDePag;
-        
     }
 
     detalhes():void{

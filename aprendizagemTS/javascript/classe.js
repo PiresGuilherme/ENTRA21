@@ -29,3 +29,5 @@ class Livro {
 const livro = new Livro('Pequeno Principe', 'nãosei', 500);
 livro.detalhes();
 console.log(livro.getAutor);
+livro.setNumDePag = 400;
+livro.detalhes();
