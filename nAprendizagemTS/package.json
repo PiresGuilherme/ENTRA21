@@ -1,0 +1,21 @@
+{
+  "name": "06-11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^20.9.0",
+    "inquirer": "^8.0.0"
+  }
+}
