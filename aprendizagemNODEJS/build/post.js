@@ -11,6 +11,7 @@ class Post {
     likeThePost(user) {
         console.log(`The user ${user.name} liked ${this.user.name} post.`);
         this.likes++;
+        console.log(`Total likes: ${this.likes}`);
     }
 }
 exports.Post = Post;
