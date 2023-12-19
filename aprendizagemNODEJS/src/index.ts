@@ -45,25 +45,66 @@
 
 
 import express, { Request, Response, json } from 'express';
+import { User } from './user';
+import { Post } from './post';
 
+const users : User[] = [];
+const posts: Post[] = [];
 const server = express();
 server.use(json())
 server.get("", (request: Request, response: Response) => {
-    console.log("meu servidor foi chamado");    
+    console.log("O servidor está funcionando");    
     // console.log(request);
     return response.send("Olá");
     
+});
+
+server.get("/users", (request:Request,  response:Response) => {
+    return response.json(users);
 })
-server.post("", (request: Request, response: Response) => {
-    console.log("meu servidor foi chamado");    
-    // console.log(request);
-    console.log(request.body);
+// server.post("", (request: Request, response: Response) => {
+//     console.log("meu servidor foi chamado");    
+//     // console.log(request);
+//     console.log(request.body);
+//     return response.status(201).send("criado");
     
-    return response.status(201).send("criado");
+// })
+
+server.get("/posts", (request:Request,  response:Response) => {
+    return response.json(posts);
+})
+
+server.post("/posts", (request:Request, response:Response) => {
+    const user = users.find((userObj:User) => userObj.userName == request.body.userName)
+    if(!user) {
+        return response.status(400).json({
+            error: "User not found"
+        })
+    }
+    let newPost: Post = new Post(
+        request.body.caption,
+        request.body.pictureUrl,
+        user
+)
+        return response.status(201).json(newPost);
     
 })
+
+// server.post("/users", (request:Request, response:Response) => {
+//     let newUser: User = {
+//         name: request.body.name,
+//         userName: request.body.userName,
+//         birthDate: request.body.birthDate,
+//         bio: request.body.bio,
+//         avatarUrl: request.body.avatarUrl,
+//         email: request.body.email,
+//         password: request.body.password
+//     };
+//     users.push (newUser);
+//     return response.status(201).json(newUser);
+// })
 
 server.listen(3000, () => {
     console.log("servidor escutando na porta 3000");
     
-})
+});
