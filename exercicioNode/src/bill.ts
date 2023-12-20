@@ -1,4 +1,7 @@
 export interface Bill {
     value: number,
-    dueDate: Date
+    dueMonth: number,
+    numberApt: number,
+    block: string,
+    paid: boolean
 }
