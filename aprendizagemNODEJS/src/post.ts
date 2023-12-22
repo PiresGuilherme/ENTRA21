@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./entity/User";
 
 export class Post {
     caption: string;
