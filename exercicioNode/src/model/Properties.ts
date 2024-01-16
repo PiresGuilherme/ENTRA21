@@ -15,8 +15,8 @@ export class Properties {
     @Column()
     numberApt: number;
 
-    @OneToMany(()=>  Resident, (resident) => resident.properties)
-    resident: Resident[]
+    // @OneToMany(()=>  Resident, (resident) => resident.properties)
+    // resident: Resident[]
 
     @Column()
     block: string;

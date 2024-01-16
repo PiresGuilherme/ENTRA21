@@ -13,6 +13,6 @@ export class Resident {
     @Column()
     birthDate: string;
 
-    @ManyToOne(()=> Properties, (properties) => properties.resident)
-    properties : Properties[]
+    // @ManyToOne(()=> Properties, (properties) => properties.resident)
+    // properties : Properties[]
 }

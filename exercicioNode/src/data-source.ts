@@ -1,9 +1,9 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { Resident } from "./entity/Resident"
-import { Properties } from "./entity/Properties"
-import { Bill } from "./entity/Bill"
-import { AptComplex } from "./entity/aptComplex"
+import { Resident } from "./model/Resident"
+import { Properties } from "./model/Properties"
+import { Bill } from "./model/Bill"
+import { AptComplex } from "./model/aptComplex"
 
 export const AppDataSource = new DataSource({
     type: "postgres",

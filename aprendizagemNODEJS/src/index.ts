@@ -1,6 +1,8 @@
 import { AppDataSource } from "./data-source"
 import express, { Request, Response, json } from 'express';
-import { User } from "./entity/User";
+import { User } from "./model/User";
+import { UserController } from "./controller/UserController";
+import { UserDTO } from "./dto/UserDTO";
 
 const server = express();
 server.use(json())
@@ -13,28 +15,26 @@ server.get("", (request: Request, response: Response) => {
 
 });
 
+
 server.get("/users", async (request: Request, response: Response) => {
-    const userRepository = AppDataSource.getRepository(User)
-    const users = await userRepository.find();
-    
-    return response.json(users);
-    
-})
-
-server.post("/users", async (request: Request, response: Response) => {
-    const userRepository = AppDataSource.getRepository(User);
-    let newUser = new User();
-    newUser.name= request.body.name;
-    newUser.userName=request.body.userName;
-    newUser.birthDate= request.body.birthDate;
-    newUser.bio= request.body.bio;
-    newUser.avatarUrl= request.body.avatarUrl;
-    newUser.email= request.body.email;
-    newUser.password= request.body.password;
-
-    await userRepository.save(newUser)
+    const userController = new UserController();
+    return response.json(await userController.getUsers());
+  });
+  
+  server.post("/users", async (request: Request, response: Response) => {
+    const userController = new UserController();
+    const newUser = await userController.createUser(new UserDTO(
+      null,
+      request.body.name,
+      request.body.userName,
+      request.body.birthDate,
+      request.body.bio,
+      request.body.avatarUrl,
+      request.body.email,
+    ));
+  
     return response.status(201).json(newUser);
-})
+  });
 
 AppDataSource.initialize().then(async () => {
     console.log("database initialized");
